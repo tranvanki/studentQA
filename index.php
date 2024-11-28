@@ -4,9 +4,11 @@ session_start();
 
 require 'includes/db.php';
 require 'includes/databasefunction.php';
-
+include 'search.html.php';
 $posts = fetch_post($pdo);
-
+// // handle search 
+// $searchQuery = isset($_GET['search_query']) ? $_GET['search_query'] : null;
+// $posts = fetch_post($pdo, $searchQuery);
 // Handle delete request
 if (isset($_GET['delete'])) {
     $postId = intval($_GET['delete']);
@@ -22,7 +24,7 @@ if (isset($_GET['delete'])) {
 ?>
 <div class="homepage">
     <h1>Homepage</h1>
-    <div class="search">
+  
         <input type="text" id="searchInput" class="form-control" placeholder="Search posts...">
         <button id="searchButton" class="btn btn-primary mt-2">Search</button>
     </div>
@@ -41,44 +43,28 @@ if (isset($_GET['delete'])) {
     <?php endif; ?>
 
     <div class="container mt-5">
-        <h2>All Posts : </h2>  <span>Total posts: </span> <br>
+    <span>Total posts: <?= count($posts) ?></span><br>
       
-        <?php if (!empty($posts)): ?>
-    <table class="flaming-table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>Module</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($posts as $post): ?>
-            <tr>
-                <td><?= htmlspecialchars($post['title']) ?></td>
-                <td><?= htmlspecialchars($post['content']) ?></td>
-                <td>
-                    <?php if (!empty($post['image'])): ?>
-                    <img src="<?= htmlspecialchars($post['image']) ?>" alt="Post Image" width="100">
-                    <?php else: ?>
-                    No image
-                    <?php endif; ?>
-                </td>
-                <td><?= htmlspecialchars($post['module_name']) ?></td>
-                <td>
-                    <a href="update_post.php?id=<?= $post['id'] ?>" class="btn btn-warning btn-sm">Update</a>
-                    <a href="delete.php?id=<?= $post['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-<?php else: ?>
-    <p>No posts found.</p>
-<?php endif; ?>
+    <?php 
+        $postData = displayPosts($posts);
+        if (!empty($postData)): ?>
+            <table class="flaming-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Image</th>
+                        <th>Module</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php renderPostsTable($postData); ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p>No posts found.</p>
+        <?php endif; ?>
 <script src="js/flaming.js"></script>
 </div>
 </div>
