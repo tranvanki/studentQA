@@ -1,0 +1,124 @@
+
+/* General Layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #5c1a00, #000); /* Flaming background */
+    color: white; /* Default text color */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    justify-content: space-between;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Form Styling */
+#myform {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(44, 44, 44, 0.9); /* Dark translucent background */
+    border: 1px solid #ff4500; /* Fiery border */
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Form Headings */
+h2 {
+    text-align: center;
+    color: #ffa500; /* Fiery orange */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Form Labels and Inputs */
+label {
+    font-weight: 500;
+    color: #ff7f00; /* Light orange for labels */
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ff4500; /* Fiery border for inputs */
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #2c2c2c; /* Dark background for inputs */
+    color: white;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #ffa500;
+    outline: none;
+    box-shadow: 0 0 10px #ff6347;
+}
+
+/* Gender Container */
+.gender-container {
+    margin-bottom: 15px;
+}
+
+.gender-container label {
+    margin-right: 10px;
+    color: #ff7f00;
+}
+
+/* Error Messages */
+.error {
+    color: #ff6347; /* Bright red */
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: center;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #ff6347;
+    box-shadow: 0 0 10px #ffa500;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    border-top: 1px solid #444;
+    padding: 10px 0;
+    text-align: center;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    #myform {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,120 @@
+/* General Layout */
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #5c1a00, #000); /* Fiery background */
+    color: white; /* Text defaults to white */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Form Card */
+.card {
+    background-color: #2c2c2c; /* Dark background for the form card */
+    border: 1px solid #ff4500; /* Fiery border */
+    box-shadow: 0 0 20px #ff4500; /* Fiery glow */
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    animation: flicker 1.5s infinite alternate; /* Fiery flicker effect */
+}
+
+/* Card Title */
+.card-title {
+    color: #ffa500; /* Flaming orange */
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347; /* Glow effect */
+    text-align: center;
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #ffa500; /* Bright flaming orange */
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #2c2c2c; /* Dark input background */
+    border: 1px solid #ff4500; /* Fiery border */
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #ff6347; /* Bright glow on focus */
+    box-shadow: 0 0 10px #ffa500;
+    outline: none;
+}
+
+/* Select Dropdown */
+.form-control option {
+    background-color: #2c2c2c; /* Match the fiery theme */
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; /* For the Back button link */
+}
+
+.btn-success {
+    background-color: #ff4500; /* Fiery orange */
+    color: white;
+    box-shadow: 0 0 10px #ffa500;
+}
+
+.btn-success:hover {
+    background-color: #ff6347; /* Brighter orange */
+    box-shadow: 0 0 15px #ff6347;
+}
+
+.btn-secondary {
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+    box-shadow: 0 0 10px #888;
+}
+
+/* Submit Button Glow */
+button[type="submit"] {
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347;
+    }
+    to {
+        box-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347;
+    }
+}
+
+/* Flicker Effect */
+@keyframes flicker {
+    from {
+        opacity: 0.95;
+    }
+    to {
+        opacity: 1;
+    }
+}

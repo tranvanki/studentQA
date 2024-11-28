@@ -1,0 +1,98 @@
+/* General Layout */
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #5c1a00, #000); /* Fiery gradient background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrollbars */
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Push canvas behind other elements */
+}
+
+/* Flaming Header */
+.flaming-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.burning-text {
+    color: #ff4500; /* Fiery orange-red */
+    text-shadow: 0 0 10px #ffa500, 0 0 20px #ff4500; /* Glowing effect */
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-flaming {
+    background-color: #ff4500; /* Fiery red */
+    border-color: #b22222; /* Darker red */
+    color: white;
+}
+
+.btn-flaming-secondary {
+    background-color: #ff7f00; /* Fiery orange */
+    border-color: #b22222;
+    color: white;
+}
+
+.btn-flaming-contact {
+    background-color: #b22222; /* Crimson red */
+    border-color: #ff6347;
+    color: white;
+}
+
+.btn-flaming-danger {
+    background-color: #8b0000; /* Darker red for danger */
+    border-color: #b22222;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85; /* Slight transparency on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: all 0.3s ease;
+}
+
+/* Search Section */
+.search {
+    margin: 20px 0;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff4500;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.search button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #ff6347;
+    box-shadow: 0 0 10px #ffa500;
+}
+
+
+
+/* Add Padding to Homepage Content */
+.homepage {
+    padding: 20px;
+}
